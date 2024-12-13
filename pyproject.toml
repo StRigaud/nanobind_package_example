@@ -1,0 +1,36 @@
+[build-system]
+requires = ["scikit-build-core", "nanobind"]
+build-backend = "scikit_build_core.build"
+
+[tool.scikit-build.cmake]
+build-type = "Release"
+
+[tool.scikit-build.sdist]
+exclude = [".flake8", ".git*", "*.yaml", "*.ipynb", "*.yml", "docs"]
+
+[tool.scikit-build]
+build-dir = "build/{wheel_tag}"
+
+[project]
+name = "mypackage"
+description = "minimal example of a C++ extension for Python"
+version = "0.0.1"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Stephane Rigaud", email = "stephane.rigaud@pasteur.fr" },
+]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Programming Language :: C++",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = ["numpy"]
+
+[project.urls]
+Documentation = "https://strigaud.com/docs"
+Issues = "https://strigaud.com/issues"
+Source = "https://strigaud.com/Sources"
